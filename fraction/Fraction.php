@@ -11,13 +11,13 @@ class Fraction
     public $numerator;
     public $denominator;
 
-    public function __construct($numerator, $denominator)
+    public function __construct(int $numerator, int $denominator)
     {
-        if(!$denominator){
-            throw new Exception('Знаменатель не может быть ноль.');
-        }
-        $this->numerator = $numerator;
-        $this->denominator = $denominator;
+            if (!$denominator) {
+                throw new Exception('Знаменателем не может быть ноль.');
+            }
+            $this->numerator = $numerator;
+            $this->denominator = $denominator;
     }
 
     public function decimalValue($quentitySignsAfterComa = 2){
