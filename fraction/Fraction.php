@@ -92,8 +92,9 @@ class Fraction
                       fraction2 varchar(20) not null,
                       resFraction varchar(20) not null,
                       operationDate datetime);';
+        $sDateTime = date('Y-m-d H:i:s');
         $sqlQuery .= "insert into addFraction (fraction1, fraction2, resFraction, operationDate) 
-                         values ('{$x}', '{$y}', '{$z}',{date('Y-m-d H:i:s')});";  //добавляет заместо даты нули, не знаю что делать
+                         values ('{$x}', '{$y}', '{$z}', '{$sDateTime}');";  // чтобы вместо даты не ставило нули значение даты и времени в переменную и в кавычки
         if(!mysqli_multi_query($conn,$sqlQuery)){
             die('some thing goes wrong');
         }
